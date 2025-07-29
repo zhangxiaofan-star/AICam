@@ -23,7 +23,7 @@ class ProcessKnowledgeGraphBuilder:
         # Neo4j连接配置
         self.uri = os.getenv('NEO4J_URI', 'bolt://localhost:7687')
         self.username = os.getenv('NEO4J_USERNAME', 'neo4j')
-        self.password = os.getenv('NEO4J_PASSWORD', 'password')
+        self.password = os.getenv('NEO4J_PASSWORD', 'zxfneo4j')
         
         # 初始化Neo4j驱动
         self.driver = None
