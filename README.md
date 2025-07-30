@@ -1,210 +1,91 @@
-# 加工工艺知识图谱系统使用说明
+# LightRAG + Neo4j 知识图谱系统
 
-## 系统概述
+## 项目概述
 
-本系统包含两个主要组件：
+本项目包含两个核心功能：
+1. **CSV转Neo4j知识图谱** - 将dataset目录下的CSV文件转换为Neo4j知识图谱
+2. **LightRAG检索系统** - 通过LightRAG从Neo4j知识库中检索并回答问题
 
-1. **CSV转Neo4j知识图谱** (`csv_to_neo4j.py`) - 将工艺和刀具数据转换为Neo4j图数据库
-2. **LightRAG知识检索** (`lightrag_retrieval.py`) - 基于LightRAG的智能问答检索系统
+## 文件说明
 
-## 环境准备
+- `csv_to_neo4j.py` - CSV数据转Neo4j知识图谱转换器
+- `lightrag_retrieval.py` - LightRAG + Neo4j 检索系统
+- `config.ini` - 系统配置文件
+- `dataset/` - CSV数据文件目录
+  - `processes.csv` - 工艺数据
+  - `tools.csv` - 刀具数据
 
-### 1. Python环境
+## 配置说明
 
-已创建conda虚拟环境 `py310`，包含所需依赖：
+编辑 `config.ini` 文件，配置以下参数：
 
-- conda env create -f env.yml
-
-### 2. Neo4j数据库要安装并启动Neo4j数据库：
-
-- 下载地址：https://neo4j.com/download/
-- 默认端口：7687
-- 默认用户名：neo4j
-- 需要设置密码
-
-### 3. OpenAI API
-
-LightRAG需要OpenAI API进行文本处理：
-
-- 获取API Key：https://platform.openai.com/
-- 在 `.env`文件中配置
-
-## 配置文件
-
-编辑 `.env` 文件，配置以下参数：
-
-```env
-# Neo4j数据库配置
-NEO4J_URI=bolt://localhost:7687
-NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=your_neo4j_password
-
-# OpenAI API配置
-OPENAI_API_KEY=your_openai_api_key
-OPENAI_BASE_URL=https://api.openai.com/v1
-
-# LightRAG配置
-LIGHTRAG_WORKING_DIR=./lightrag_cache
+### Neo4j数据库配置
+```ini
+[neo4j]
+uri = bolt://localhost:7687
+username = neo4j
+password = your_password
 ```
 
-## 使用步骤
+### 派欧云API配置
+```ini
+[paiyun_api]
+api_key = your_api_key
+base_url = https://api.ppinfra.com/v1
+model = qwen/qwen3-32b-fp8
+```
 
-### 步骤1：启动Neo4j数据库
+## 使用方法
 
-1. 启动Neo4j Desktop或Neo4j服务
-2. 确保数据库运行在 `bolt://localhost:7687`
-3. 记录用户名和密码
-
-### 步骤2：构建Neo4j知识图谱
+### 1. 转换CSV到Neo4j
 
 ```bash
-# 激活conda环境
-conda activate py310
-
-# 运行知识图谱构建脚本
 python csv_to_neo4j.py
 ```
 
-该脚本将：
+这将：
+- 连接到Neo4j数据库
+- 清空现有数据
+- 读取dataset目录下的CSV文件
+- 创建特征、工艺、刀具节点
+- 建立节点间的关系
+- 创建索引优化查询性能
 
-- 读取 `dataset/processes.csv` 和 `dataset/tools.csv`
-- 创建节点：Process（工艺）、Tool（刀具）、Feature（特征）、Surface（面）、ProcessType（工艺类型）、ProcessStage（工序阶段）
-- 建立关系：工艺-特征、工艺-面类型、工艺-工艺类型、工艺-工序阶段、刀具-工艺推荐
-- 输出统计信息
-
-### 步骤3：使用LightRAG检索系统
+### 2. 运行检索系统
 
 ```bash
-# 运行检索系统
 python lightrag_retrieval.py
 ```
 
-首次运行会构建知识库，后续运行直接使用已有数据。
+这将：
+- 初始化LightRAG系统
+- 从Neo4j加载知识数据
+- 构建知识库
+- 提供交互式问答界面
 
-## 功能特性
+## 系统特性
 
-### Neo4j知识图谱功能
+- **多层备用方案**: 当LightRAG或Neo4j连接失败时，自动切换到备用方案
+- **配置化管理**: 所有关键参数通过config.ini统一管理
+- **完整日志**: 详细的操作日志记录在logs目录下
+- **错误处理**: 完善的异常处理和错误提示
 
-- **节点类型**：
+## 依赖包
 
-  - Process：工艺模板
-  - Tool：刀具
-  - Feature：加工特征
-  - Surface：面类型
-  - ProcessType：工艺类型
-  - ProcessStage：工序阶段
-- **关系类型**：
+```bash
+pip install pandas neo4j lightrag aiohttp configparser
+```
 
-  - PROCESSES：工艺处理特征
-  - USES_SURFACE：工艺使用面类型
-  - HAS_TYPE：工艺具有类型
-  - IN_STAGE：工艺属于阶段
-  - RECOMMENDED_FOR：刀具推荐用于工艺
+## 注意事项
 
-### LightRAG检索功能
-
-- **查询模式**：
-
-  - `naive`：简单检索
-  - `local`：局部图检索
-  - `global`：全局图检索
-  - `hybrid`：混合模式（推荐）
-- **示例查询**：
-
-  - "什么是矩形凸台的加工工艺？"
-  - "精加工阶段适用哪些工艺类型？"
-  - "直径为10mm的刀具有哪些？"
-  - "如何选择合适的刀具进行圆柱通孔加工？"
-
-## 数据结构
-
-### 工艺数据 (processes.csv)
-
-- 模板编号：工艺模板唯一标识
-- 特征ID：加工特征标识
-- 特征名称：特征类型名称
-- 组成面：特征组成面信息
-- 特征面：特征面信息
-- 面类型：面的几何类型
-- 侧壁特征：是否有侧壁特征
-- 余量：加工余量
-- 工序阶段：粗加工/半精加工/精加工
-- 工艺类型：具体工艺方法
-
-### 刀具数据 (tools.csv)
-
-- 刀具id：刀具唯一标识
-- 刀具名称：刀具型号名称
-- 直径：刀具直径(mm)
-- R角：刀具圆角半径(mm)
-- 刃数：刀具刃数
-- 伸出长：刀具伸出长度(mm)
+1. 确保Neo4j服务正在运行
+2. 确保dataset目录下有processes.csv和tools.csv文件
+3. 配置正确的派欧云API密钥
+4. 首次运行时会清空Neo4j数据库
 
 ## 故障排除
 
-### 常见问题
-
-1. **Neo4j连接失败**
-
-   - 检查Neo4j服务是否启动
-   - 验证连接参数（URI、用户名、密码）
-   - 确认防火墙设置
-2. **OpenAI API错误**
-
-   - 检查API Key是否正确
-   - 验证账户余额
-   - 确认网络连接
-3. **数据加载失败**
-
-   - 检查CSV文件路径
-   - 验证文件编码（UTF-8）
-   - 确认数据格式
-
-### 日志信息
-
-系统会输出详细的日志信息，帮助诊断问题：
-
-- INFO：正常操作信息
-- WARNING：警告信息
-- ERROR：错误信息
-
-## 扩展功能
-
-### 自定义查询
-
-可以在Neo4j Browser中执行Cypher查询：
-
-```cypher
-// 查询所有精加工工艺
-MATCH (p:Process)-[:IN_STAGE]->(ps:ProcessStage {name: '精加工'})
-RETURN p
-
-// 查询推荐刀具
-MATCH (t:Tool)-[:RECOMMENDED_FOR]->(p:Process)
-RETURN t.name, p.template_id
-```
-
-### 添加新数据
-
-1. 更新CSV文件
-2. 重新运行 `csv_to_neo4j.py`
-3. 重新构建LightRAG知识库
-
-## 技术架构
-
-```
-CSV数据 → Neo4j知识图谱 ← Cypher查询
-    ↓
-LightRAG知识库 → 向量检索 → 智能问答
-    ↑
-OpenAI API
-```
-
-## 联系支持
-
-如有问题，请检查：
-
-1. 环境配置是否正确
-2. 依赖包是否完整安装
-3. 服务是否正常运行
-4. 日志错误信息
+- **Neo4j连接失败**: 检查Neo4j服务状态和配置
+- **API调用失败**: 检查派欧云API密钥和网络连接
+- **依赖包缺失**: 运行pip install安装所需包
+- **CSV文件不存在**: 确保dataset目录下有正确的CSV文件

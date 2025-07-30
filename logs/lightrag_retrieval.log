@@ -1,0 +1,4 @@
+2025-07-30 23:38:14,135 - __main__ - ERROR - LightRAG模块未安装: cannot import name 'gpt_4o_mini_complete' from 'lightrag.llm' (E:\conda_env\envs\zxf-jog\Lib\site-packages\lightrag\llm\__init__.py)
+2025-07-30 23:38:14,537 - __main__ - INFO - Neo4j数据库连接成功
+2025-07-30 23:38:14,537 - __main__ - ERROR - 搜索特征失败: Session.run() got multiple values for argument 'query'
+2025-07-30 23:38:14,538 - __main__ - INFO - Neo4j连接已关闭
