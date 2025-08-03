@@ -1,4 +1,0 @@
-2025-07-30 23:22:04,807 - __main__ - ERROR - Neo4j连接失败: {code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.}
-2025-07-30 23:24:23,614 - __main__ - ERROR - LightRAG模块导入失败: No module named 'networkx'
-2025-07-30 23:24:23,615 - __main__ - INFO - 执行查询: 特征类型都有哪些？请详细列出所有的特征类型。
-2025-07-30 23:24:23,616 - __main__ - INFO - Neo4j连接已关闭
