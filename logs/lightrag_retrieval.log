@@ -2,3 +2,991 @@
 2025-07-30 23:38:14,537 - __main__ - INFO - Neo4j数据库连接成功
 2025-07-30 23:38:14,537 - __main__ - ERROR - 搜索特征失败: Session.run() got multiple values for argument 'query'
 2025-07-30 23:38:14,538 - __main__ - INFO - Neo4j连接已关闭
+2025-08-01 23:21:42,386 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-01 23:21:42,386 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-01 23:21:42,387 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-01 23:21:42,397 - __main__ - INFO - LightRAG初始化成功
+2025-08-01 23:21:46,504 - __main__ - ERROR - Neo4j连接失败: Couldn't connect to localhost:7687 (resolved to ('[::1]:7687', '127.0.0.1:7687')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)
+2025-08-01 23:21:46,504 - __main__ - ERROR - 无法连接Neo4j，使用备用知识
+2025-08-01 23:21:50,612 - __main__ - ERROR - Neo4j连接失败: Couldn't connect to localhost:7687 (resolved to ('[::1]:7687', '127.0.0.1:7687')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)
+2025-08-01 23:21:50,612 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 13:17:17,135 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 13:17:17,136 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 13:17:17,136 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 13:17:17,137 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 13:17:17,947 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 13:17:18,377 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 13:17:18,378 - __main__ - ERROR - 构建知识库失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 13:17:18,455 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 13:17:18,685 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:06:39,424 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:06:39,424 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:06:39,425 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:06:39,426 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:06:39,494 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:06:39,513 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:06:39,513 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,513 - __main__ - ERROR - 插入第2条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第3条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第4条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第5条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第6条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第7条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第8条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第9条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,514 - __main__ - ERROR - 插入第10条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第11条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第12条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第13条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第14条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第15条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第16条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第17条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第18条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第19条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第20条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,515 - __main__ - ERROR - 插入第21条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第22条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第23条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第24条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第25条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第26条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第27条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第28条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第29条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第30条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第31条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第32条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第33条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第34条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第35条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第36条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第37条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,516 - __main__ - ERROR - 插入第38条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第39条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第40条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第41条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第42条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第43条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第44条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第45条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第46条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第47条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第48条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第49条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第50条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,517 - __main__ - ERROR - 插入第51条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第52条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第53条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第54条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第55条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第56条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第57条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第58条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第59条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第60条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第61条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第62条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第63条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,518 - __main__ - ERROR - 插入第64条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第65条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第66条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第67条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第68条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第69条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第70条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第71条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第72条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,519 - __main__ - ERROR - 插入第73条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,520 - __main__ - ERROR - 插入第74条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,520 - __main__ - ERROR - 插入第75条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,520 - __main__ - ERROR - 插入第76条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,520 - __main__ - ERROR - 插入第77条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,520 - __main__ - ERROR - 插入第78条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,520 - __main__ - ERROR - 插入第79条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,521 - __main__ - ERROR - 插入第80条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,521 - __main__ - ERROR - 插入第81条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,521 - __main__ - ERROR - 插入第82条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,521 - __main__ - ERROR - 插入第83条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,522 - __main__ - ERROR - 插入第84条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,522 - __main__ - ERROR - 插入第85条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,522 - __main__ - ERROR - 插入第86条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,522 - __main__ - ERROR - 插入第87条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,522 - __main__ - ERROR - 插入第88条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,522 - __main__ - ERROR - 插入第89条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第90条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第91条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第92条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第93条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第94条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第95条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第96条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第97条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第98条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第99条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,523 - __main__ - ERROR - 插入第100条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第101条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第102条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第103条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第104条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第105条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第106条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第107条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第108条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第109条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,524 - __main__ - ERROR - 插入第110条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第111条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第112条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第113条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第114条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第115条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第116条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第117条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第118条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第119条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第120条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第121条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第122条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第123条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,525 - __main__ - ERROR - 插入第124条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第125条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第126条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第127条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第128条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第129条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第130条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第131条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第132条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第133条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第134条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,526 - __main__ - ERROR - 插入第135条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第136条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第137条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第138条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第139条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第140条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第141条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第142条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第143条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第144条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,527 - __main__ - ERROR - 插入第145条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,528 - __main__ - ERROR - 插入第146条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,528 - __main__ - ERROR - 插入第147条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,528 - __main__ - ERROR - 插入第148条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,528 - __main__ - ERROR - 插入第149条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第150条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第151条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第152条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第153条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第154条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第155条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第156条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第157条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第158条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第159条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第160条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第161条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,529 - __main__ - ERROR - 插入第162条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第163条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第164条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第165条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第166条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第167条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第168条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第169条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第170条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,530 - __main__ - ERROR - 插入第171条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第172条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第173条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第174条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第175条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第176条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第177条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第178条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第179条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,531 - __main__ - ERROR - 插入第180条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第181条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第182条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第183条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第184条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第185条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第186条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第187条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第188条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第189条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第190条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第191条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,532 - __main__ - ERROR - 插入第192条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第193条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第194条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第195条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第196条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第197条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第198条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第199条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,533 - __main__ - ERROR - 插入第200条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,534 - __main__ - ERROR - 插入第201条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,534 - __main__ - ERROR - 插入第202条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,534 - __main__ - ERROR - 插入第203条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第204条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第205条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第206条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第207条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第208条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第209条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,535 - __main__ - ERROR - 插入第210条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第211条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第212条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第213条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第214条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第215条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第216条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第217条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第218条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第219条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第220条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第221条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第222条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第223条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,536 - __main__ - ERROR - 插入第224条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第225条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第226条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第227条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第228条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第229条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第230条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第231条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第232条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第233条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第234条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第235条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第236条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第237条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,537 - __main__ - ERROR - 插入第238条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第239条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第240条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第241条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第242条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第243条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第244条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第245条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第246条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第247条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第248条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,538 - __main__ - ERROR - 插入第249条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,540 - __main__ - ERROR - 插入第250条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,540 - __main__ - ERROR - 插入第251条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,540 - __main__ - ERROR - 插入第252条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,540 - __main__ - ERROR - 插入第253条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,540 - __main__ - ERROR - 插入第254条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,540 - __main__ - ERROR - 插入第255条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第256条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第257条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第258条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第259条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第260条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第261条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第262条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第263条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第264条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,541 - __main__ - ERROR - 插入第265条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,542 - __main__ - ERROR - 插入第266条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,542 - __main__ - ERROR - 插入第267条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,542 - __main__ - ERROR - 插入第268条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,542 - __main__ - ERROR - 插入第269条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,542 - __main__ - ERROR - 插入第270条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,542 - __main__ - INFO - 知识库构建完成，共处理 270 条知识
+2025-08-03 14:06:39,543 - __main__ - ERROR - 查询失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:39,543 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:06:59,777 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:06:59,777 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:06:59,777 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:06:59,777 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:06:59,833 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:06:59,854 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:06:59,855 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,855 - __main__ - ERROR - 插入第2条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,855 - __main__ - ERROR - 插入第3条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,855 - __main__ - ERROR - 插入第4条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,855 - __main__ - ERROR - 插入第5条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,855 - __main__ - ERROR - 插入第6条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,856 - __main__ - ERROR - 插入第7条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,856 - __main__ - ERROR - 插入第8条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,856 - __main__ - ERROR - 插入第9条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,856 - __main__ - ERROR - 插入第10条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,856 - __main__ - ERROR - 插入第11条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第12条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第13条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第14条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第15条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第16条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第17条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第18条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,857 - __main__ - ERROR - 插入第19条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,858 - __main__ - ERROR - 插入第20条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,858 - __main__ - ERROR - 插入第21条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,858 - __main__ - ERROR - 插入第22条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,858 - __main__ - ERROR - 插入第23条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,858 - __main__ - ERROR - 插入第24条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第25条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第26条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第27条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第28条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第29条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第30条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,859 - __main__ - ERROR - 插入第31条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,860 - __main__ - ERROR - 插入第32条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,860 - __main__ - ERROR - 插入第33条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,860 - __main__ - ERROR - 插入第34条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第35条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第36条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第37条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第38条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第39条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第40条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第41条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,861 - __main__ - ERROR - 插入第42条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第43条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第44条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第45条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第46条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第47条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第48条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第49条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第50条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,862 - __main__ - ERROR - 插入第51条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第52条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第53条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第54条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第55条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第56条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第57条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第58条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第59条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,863 - __main__ - ERROR - 插入第60条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第61条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第62条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第63条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第64条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第65条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第66条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第67条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第68条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第69条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第70条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第71条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,865 - __main__ - ERROR - 插入第72条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第73条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第74条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第75条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第76条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第77条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第78条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第79条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第80条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第81条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第82条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第83条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第84条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第85条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,866 - __main__ - ERROR - 插入第86条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,867 - __main__ - ERROR - 插入第87条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,867 - __main__ - ERROR - 插入第88条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,867 - __main__ - ERROR - 插入第89条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,867 - __main__ - ERROR - 插入第90条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,867 - __main__ - ERROR - 插入第91条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第92条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第93条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第94条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第95条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第96条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第97条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第98条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第99条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第100条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第101条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第102条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第103条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第104条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,868 - __main__ - ERROR - 插入第105条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第106条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第107条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第108条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第109条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第110条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第111条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第112条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第113条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第114条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第115条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,869 - __main__ - ERROR - 插入第116条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第117条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第118条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第119条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第120条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第121条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第122条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第123条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第124条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第125条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第126条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第127条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第128条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第129条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第130条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,870 - __main__ - ERROR - 插入第131条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第132条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第133条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第134条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第135条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第136条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第137条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第138条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第139条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第140条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第141条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第142条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第143条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第144条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,872 - __main__ - ERROR - 插入第145条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第146条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第147条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第148条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第149条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第150条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第151条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第152条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,873 - __main__ - ERROR - 插入第153条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第154条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第155条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第156条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第157条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第158条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第159条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第160条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第161条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,874 - __main__ - ERROR - 插入第162条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第163条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第164条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第165条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第166条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第167条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第168条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,875 - __main__ - ERROR - 插入第169条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第170条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第171条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第172条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第173条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第174条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第175条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第176条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第177条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第178条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,876 - __main__ - ERROR - 插入第179条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,877 - __main__ - ERROR - 插入第180条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,877 - __main__ - ERROR - 插入第181条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,877 - __main__ - ERROR - 插入第182条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第183条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第184条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第185条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第186条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第187条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第188条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第189条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,878 - __main__ - ERROR - 插入第190条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第191条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第192条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第193条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第194条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第195条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第196条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,879 - __main__ - ERROR - 插入第197条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,880 - __main__ - ERROR - 插入第198条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,880 - __main__ - ERROR - 插入第199条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,880 - __main__ - ERROR - 插入第200条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,880 - __main__ - ERROR - 插入第201条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,880 - __main__ - ERROR - 插入第202条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,880 - __main__ - ERROR - 插入第203条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第204条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第205条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第206条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第207条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第208条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第209条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第210条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第211条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第212条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第213条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第214条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第215条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第216条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第217条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第218条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,881 - __main__ - ERROR - 插入第219条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第220条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第221条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第222条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第223条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第224条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第225条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第226条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第227条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,882 - __main__ - ERROR - 插入第228条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第229条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第230条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第231条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第232条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第233条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第234条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第235条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第236条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第237条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,883 - __main__ - ERROR - 插入第238条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第239条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第240条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第241条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第242条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第243条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第244条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第245条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第246条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第247条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第248条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第249条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第250条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第251条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第252条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第253条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第254条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第255条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第256条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第257条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,884 - __main__ - ERROR - 插入第258条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第259条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第260条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第261条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第262条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第263条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第264条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第265条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第266条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第267条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,886 - __main__ - ERROR - 插入第268条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,887 - __main__ - ERROR - 插入第269条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,887 - __main__ - ERROR - 插入第270条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,887 - __main__ - INFO - 知识库构建完成，共处理 270 条知识
+2025-08-03 14:06:59,887 - __main__ - ERROR - 查询失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:06:59,887 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:10:11,847 - __main__ - WARNING - LightRAG存在兼容性问题，跳过初始化，将使用备用方案
+2025-08-03 14:10:11,915 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:10:11,930 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:10:11,930 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:10:11,934 - __main__ - ERROR - aiohttp模块未安装，无法调用API
+2025-08-03 14:10:11,935 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:11:37,376 - __main__ - WARNING - LightRAG存在兼容性问题，跳过初始化，将使用备用方案
+2025-08-03 14:11:37,449 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:11:37,463 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:11:37,463 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:11:47,308 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:11:59,414 - __main__ - WARNING - LightRAG存在兼容性问题，跳过初始化，将使用备用方案
+2025-08-03 14:11:59,469 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:11:59,480 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:11:59,481 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:12:16,649 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:12:27,477 - __main__ - WARNING - LightRAG存在兼容性问题，跳过初始化，将使用备用方案
+2025-08-03 14:12:27,530 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:12:27,543 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:12:27,543 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:12:36,042 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:13:47,445 - __main__ - WARNING - LightRAG存在兼容性问题，跳过初始化，将使用备用方案
+2025-08-03 14:13:47,500 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:13:47,511 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:13:47,511 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:13:55,951 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:14:09,857 - __main__ - WARNING - LightRAG存在兼容性问题，跳过初始化，将使用备用方案
+2025-08-03 14:14:09,913 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:14:09,924 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:14:09,924 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:14:21,950 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:16:20,163 - __main__ - ERROR - LightRAG模块未安装: cannot import name 'gpt_4o_mini_complete' from 'lightrag.llm' (E:\conda_env\envs\zxf-jog\Lib\site-packages\lightrag\llm\__init__.py)
+2025-08-03 14:16:20,163 - __main__ - INFO - 请运行: pip install lightrag-hku
+2025-08-03 14:16:20,226 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:16:20,235 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:16:20,236 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:16:28,630 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:16:54,455 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:16:54,455 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:16:55,065 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:16:55,066 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:16:55,066 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:16:55,067 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:16:55,145 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:16:55,170 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:16:55,171 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,171 - __main__ - ERROR - 插入第2条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,171 - __main__ - ERROR - 插入第3条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,171 - __main__ - ERROR - 插入第4条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,171 - __main__ - ERROR - 插入第5条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,172 - __main__ - ERROR - 插入第6条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,172 - __main__ - ERROR - 插入第7条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,172 - __main__ - ERROR - 插入第8条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,172 - __main__ - ERROR - 插入第9条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,172 - __main__ - ERROR - 插入第10条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,172 - __main__ - ERROR - 插入第11条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,173 - __main__ - ERROR - 插入第12条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,173 - __main__ - ERROR - 插入第13条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,173 - __main__ - ERROR - 插入第14条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,173 - __main__ - ERROR - 插入第15条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,173 - __main__ - ERROR - 插入第16条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第17条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第18条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第19条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第20条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第21条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第22条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第23条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,174 - __main__ - ERROR - 插入第24条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第25条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第26条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第27条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第28条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第29条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第30条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,175 - __main__ - ERROR - 插入第31条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,176 - __main__ - ERROR - 插入第32条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,176 - __main__ - ERROR - 插入第33条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,176 - __main__ - ERROR - 插入第34条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,176 - __main__ - ERROR - 插入第35条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,176 - __main__ - ERROR - 插入第36条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,177 - __main__ - ERROR - 插入第37条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,177 - __main__ - ERROR - 插入第38条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,177 - __main__ - ERROR - 插入第39条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,177 - __main__ - ERROR - 插入第40条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,177 - __main__ - ERROR - 插入第41条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,177 - __main__ - ERROR - 插入第42条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第43条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第44条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第45条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第46条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第47条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第48条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,178 - __main__ - ERROR - 插入第49条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第50条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第51条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第52条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第53条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第54条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第55条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,179 - __main__ - ERROR - 插入第56条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第57条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第58条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第59条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第60条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第61条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第62条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第63条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,180 - __main__ - ERROR - 插入第64条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,181 - __main__ - ERROR - 插入第65条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,181 - __main__ - ERROR - 插入第66条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,181 - __main__ - ERROR - 插入第67条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,181 - __main__ - ERROR - 插入第68条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,181 - __main__ - ERROR - 插入第69条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,181 - __main__ - ERROR - 插入第70条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,182 - __main__ - ERROR - 插入第71条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,182 - __main__ - ERROR - 插入第72条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,182 - __main__ - ERROR - 插入第73条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,182 - __main__ - ERROR - 插入第74条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,182 - __main__ - ERROR - 插入第75条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,182 - __main__ - ERROR - 插入第76条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第77条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第78条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第79条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第80条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第81条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第82条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,183 - __main__ - ERROR - 插入第83条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第84条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第85条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第86条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第87条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第88条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第89条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,184 - __main__ - ERROR - 插入第90条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,185 - __main__ - ERROR - 插入第91条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,185 - __main__ - ERROR - 插入第92条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,185 - __main__ - ERROR - 插入第93条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,185 - __main__ - ERROR - 插入第94条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,185 - __main__ - ERROR - 插入第95条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,185 - __main__ - ERROR - 插入第96条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,186 - __main__ - ERROR - 插入第97条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,186 - __main__ - ERROR - 插入第98条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,187 - __main__ - ERROR - 插入第99条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,187 - __main__ - ERROR - 插入第100条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,187 - __main__ - ERROR - 插入第101条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,187 - __main__ - ERROR - 插入第102条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,187 - __main__ - ERROR - 插入第103条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,187 - __main__ - ERROR - 插入第104条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,188 - __main__ - ERROR - 插入第105条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,188 - __main__ - ERROR - 插入第106条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,188 - __main__ - ERROR - 插入第107条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,188 - __main__ - ERROR - 插入第108条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,188 - __main__ - ERROR - 插入第109条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,189 - __main__ - ERROR - 插入第110条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,189 - __main__ - ERROR - 插入第111条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,189 - __main__ - ERROR - 插入第112条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,189 - __main__ - ERROR - 插入第113条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,189 - __main__ - ERROR - 插入第114条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,189 - __main__ - ERROR - 插入第115条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,190 - __main__ - ERROR - 插入第116条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,190 - __main__ - ERROR - 插入第117条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,190 - __main__ - ERROR - 插入第118条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,190 - __main__ - ERROR - 插入第119条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,190 - __main__ - ERROR - 插入第120条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第121条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第122条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第123条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第124条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第125条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第126条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第127条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第128条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,191 - __main__ - ERROR - 插入第129条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,192 - __main__ - ERROR - 插入第130条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,192 - __main__ - ERROR - 插入第131条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,192 - __main__ - ERROR - 插入第132条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,192 - __main__ - ERROR - 插入第133条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,192 - __main__ - ERROR - 插入第134条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第135条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第136条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第137条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第138条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第139条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第140条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第141条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,193 - __main__ - ERROR - 插入第142条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第143条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第144条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第145条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第146条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第147条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第148条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,194 - __main__ - ERROR - 插入第149条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第150条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第151条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第152条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第153条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第154条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第155条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第156条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第157条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,195 - __main__ - ERROR - 插入第158条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第159条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第160条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第161条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第162条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第163条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第164条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,196 - __main__ - ERROR - 插入第165条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第166条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第167条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第168条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第169条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第170条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第171条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第172条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第173条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第174条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第175条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,197 - __main__ - ERROR - 插入第176条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第177条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第178条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第179条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第180条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第181条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第182条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第183条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,198 - __main__ - ERROR - 插入第184条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第185条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第186条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第187条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第188条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第189条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第190条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第191条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,199 - __main__ - ERROR - 插入第192条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第193条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第194条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第195条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第196条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第197条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第198条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第199条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,200 - __main__ - ERROR - 插入第200条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第201条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第202条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第203条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第204条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第205条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第206条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第207条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第208条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第209条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第210条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第211条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第212条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第213条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第214条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第215条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第216条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第217条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,201 - __main__ - ERROR - 插入第218条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,203 - __main__ - ERROR - 插入第219条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,203 - __main__ - ERROR - 插入第220条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,203 - __main__ - ERROR - 插入第221条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,203 - __main__ - ERROR - 插入第222条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,203 - __main__ - ERROR - 插入第223条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第224条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第225条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第226条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第227条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第228条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第229条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第230条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第231条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,204 - __main__ - ERROR - 插入第232条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第233条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第234条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第235条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第236条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第237条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第238条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第239条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第240条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第241条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第242条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,205 - __main__ - ERROR - 插入第243条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第244条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第245条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第246条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第247条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第248条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第249条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第250条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第251条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第252条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第253条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第254条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,206 - __main__ - ERROR - 插入第255条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第256条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第257条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第258条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第259条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第260条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第261条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第262条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第263条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第264条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第265条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第266条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第267条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,207 - __main__ - ERROR - 插入第268条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,208 - __main__ - ERROR - 插入第269条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,208 - __main__ - ERROR - 插入第270条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,208 - __main__ - INFO - 知识库构建完成，共处理 270 条知识
+2025-08-03 14:16:55,208 - __main__ - ERROR - 查询失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:16:55,209 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:18:04,915 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:18:04,916 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:18:05,542 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:18:05,542 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:18:05,542 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:18:05,543 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:18:05,593 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:18:05,605 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:18:05,605 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:05,605 - __main__ - ERROR - 插入第2条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:05,605 - __main__ - ERROR - 插入第3条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:05,605 - __main__ - ERROR - 插入第4条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:05,605 - __main__ - ERROR - 插入第5条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:05,606 - __main__ - WARNING - 插入错误过多，后续错误将不再显示
+2025-08-03 14:18:05,606 - __main__ - ERROR - LightRAG插入错误率过高，禁用LightRAG功能
+2025-08-03 14:18:05,606 - __main__ - WARNING - LightRAG已被禁用，将使用备用查询方案
+2025-08-03 14:18:05,681 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:18:05,696 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:18:05,696 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:18:15,564 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:18:56,928 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:18:56,928 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:18:57,547 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:18:57,548 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:18:57,548 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:18:57,549 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:18:57,619 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:18:57,630 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:18:57,630 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:57,630 - __main__ - ERROR - 插入第2条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:57,630 - __main__ - ERROR - 插入第3条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:57,630 - __main__ - ERROR - 插入第4条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:57,630 - __main__ - ERROR - 插入第5条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:18:57,630 - __main__ - WARNING - 插入错误过多，后续错误将不再显示
+2025-08-03 14:18:57,631 - __main__ - ERROR - LightRAG插入错误率过高，禁用LightRAG功能
+2025-08-03 14:18:57,631 - __main__ - WARNING - LightRAG已被禁用，将使用备用查询方案
+2025-08-03 14:18:57,681 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:18:57,692 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:18:57,692 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:19:04,822 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:23:01,655 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:23:01,655 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:23:02,286 - __main__ - WARNING - 默认配置初始化失败: 'function' object has no attribute 'embedding_dim'
+2025-08-03 14:23:02,286 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:23:02,286 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:23:02,286 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:23:02,287 - __main__ - INFO - 使用自定义配置初始化LightRAG成功
+2025-08-03 14:23:02,287 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:23:02,352 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:23:02,365 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:23:02,365 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:23:02,366 - __main__ - ERROR - 检测到异步上下文管理器问题，这通常是LightRAG内部组件返回None导致的
+2025-08-03 14:23:02,366 - __main__ - ERROR - 立即禁用LightRAG以避免更多错误
+2025-08-03 14:23:02,366 - __main__ - WARNING - LightRAG已被禁用，将使用备用查询方案
+2025-08-03 14:23:02,429 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:23:02,439 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:23:02,440 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:23:11,273 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:26:59,246 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:26:59,246 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:26:59,880 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_entities.json'} 0 data
+2025-08-03 14:26:59,880 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_relationships.json'} 0 data
+2025-08-03 14:26:59,881 - nano-vectordb - INFO - Init {'embedding_dim': 384, 'metric': 'cosine', 'storage_file': './lightrag_cache\\vdb_chunks.json'} 0 data
+2025-08-03 14:26:59,881 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:26:59,881 - __main__ - INFO - LightRAG初始化成功
+2025-08-03 14:26:59,935 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:26:59,945 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:26:59,945 - __main__ - ERROR - 插入第1条知识失败: 'NoneType' object does not support the asynchronous context manager protocol
+2025-08-03 14:26:59,945 - __main__ - ERROR - 检测到异步上下文管理器问题，这通常是LightRAG内部组件返回None导致的
+2025-08-03 14:26:59,945 - __main__ - ERROR - 立即禁用LightRAG以避免更多错误
+2025-08-03 14:26:59,945 - __main__ - WARNING - LightRAG已被禁用，将使用备用查询方案
+2025-08-03 14:27:00,012 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:27:00,023 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:27:00,023 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:27:13,553 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:29:17,027 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:29:17,027 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:29:17,637 - __main__ - ERROR - LightRAG初始化失败: 'function' object has no attribute 'embedding_dim'
+2025-08-03 14:29:17,639 - __main__ - INFO - 将使用备用查询方案
+2025-08-03 14:29:17,694 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:29:17,702 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:29:17,703 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:29:25,912 - __main__ - INFO - Neo4j连接已关闭
+2025-08-03 14:31:39,773 - __main__ - INFO - LightRAG模块导入成功
+2025-08-03 14:31:39,773 - __main__ - INFO - 工作目录已创建: ./lightrag_cache
+2025-08-03 14:31:39,773 - __main__ - INFO - 暂时跳过LightRAG初始化，使用稳定的备用查询方案
+2025-08-03 14:31:39,773 - __main__ - WARNING - LightRAG未初始化，使用备用查询
+2025-08-03 14:31:39,830 - __main__ - INFO - Neo4j数据库连接成功
+2025-08-03 14:31:39,840 - __main__ - INFO - 从Neo4j获取知识数据: 270 条
+2025-08-03 14:31:39,840 - __main__ - INFO - 获取到 270 条知识，使用前10条作为上下文
+2025-08-03 14:31:50,573 - __main__ - INFO - Neo4j连接已关闭

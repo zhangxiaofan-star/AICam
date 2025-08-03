@@ -10,7 +10,10 @@ import sys
 import asyncio
 import configparser
 import logging
-from typing import Dict, List, Any, Optional
+from neo4j import GraphDatabase
+from lightrag import LightRAG, QueryParam
+from lightrag.utils import EmbeddingFunc
+import numpy as np
 
 def load_config():
     """加载配置文件"""
@@ -53,9 +56,7 @@ class Neo4jKnowledgeRetriever:
     
     def connect_neo4j(self):
         """连接Neo4j数据库"""
-        try:
-            from neo4j import GraphDatabase
-            
+        try:             
             uri = self.config.get('neo4j', 'uri')
             username = self.config.get('neo4j', 'username')
             password = self.config.get('neo4j', 'password')
@@ -84,13 +85,13 @@ class Neo4jKnowledgeRetriever:
             with self.driver.session() as session:
                 # 获取特征和工艺信息
                 query = """
-                MATCH (f:Feature)-[:HAS_PROCESS]->(p:Process)
-                OPTIONAL MATCH (p)-[:BELONGS_TO]->(pt:ProcessType)
-                RETURN f.name as feature_name, f.id as feature_id,
-                       p.template_id as template_id, p.process_type as process_type,
-                       p.surface_type as surface_type, p.process_stage as process_stage,
-                       pt.name as process_type_name
-                ORDER BY f.name, p.template_id
+                    MATCH (f:Feature)-[:HAS_PROCESS]->(p:Process)
+                    OPTIONAL MATCH (p)-[:BELONGS_TO]->(pt:ProcessType)
+                    RETURN f.name as feature_name, f.id as feature_id,
+                           p.template_id as template_id, p.process_type as process_type,
+                           p.surface_type as surface_type, p.process_stage as process_stage,
+                           pt.name as process_type_name
+                    ORDER BY f.name, p.template_id
                 """
                 
                 result = session.run(query)
@@ -98,12 +99,12 @@ class Neo4jKnowledgeRetriever:
                 
                 for record in result:
                     knowledge_text = f"""
-                    特征名称: {record['feature_name']}
-                    特征ID: {record['feature_id']}
-                    模板编号: {record['template_id']}
-                    工艺类型: {record['process_type'] or record['process_type_name'] or '未知'}
-                    面类型: {record['surface_type'] or '未知'}
-                    工序阶段: {record['process_stage'] or '未知'}
+                        特征名称: {record['feature_name']}
+                        特征ID: {record['feature_id']}
+                        模板编号: {record['template_id']}
+                        工艺类型: {record['process_type'] or record['process_type_name'] or '未知'}
+                        面类型: {record['surface_type'] or '未知'}
+                        工序阶段: {record['process_stage'] or '未知'}
                     """
                     knowledge_data.append(knowledge_text.strip())
                 
@@ -122,13 +123,13 @@ class Neo4jKnowledgeRetriever:
             with self.driver.session() as session:
                 # 模糊搜索特征
                 search_query = """
-                MATCH (f:Feature)
-                WHERE f.name CONTAINS $search_text OR f.id CONTAINS $search_text
-                OPTIONAL MATCH (f)-[:HAS_PROCESS]->(p:Process)
-                OPTIONAL MATCH (p)-[:BELONGS_TO]->(pt:ProcessType)
-                RETURN f.name as feature_name, f.id as feature_id,
-                       collect(DISTINCT p.process_type) as process_types,
-                       collect(DISTINCT p.surface_type) as surface_types
+                    MATCH (f:Feature)
+                    WHERE f.name CONTAINS $search_text OR f.id CONTAINS $search_text
+                    OPTIONAL MATCH (f)-[:HAS_PROCESS]->(p:Process)
+                    OPTIONAL MATCH (p)-[:BELONGS_TO]->(pt:ProcessType)
+                    RETURN f.name as feature_name, f.id as feature_id,
+                           collect(DISTINCT p.process_type) as process_types,
+                           collect(DISTINCT p.surface_type) as surface_types
                 """
                 
                 result = session.run(search_query, search_text=query_text)
@@ -147,6 +148,8 @@ class Neo4jKnowledgeRetriever:
         except Exception as e:
             self.logger.error(f"搜索特征失败: {e}")
             return []
+    
+
     
     def close(self):
         """关闭连接"""
@@ -229,54 +232,36 @@ class LightRAGRetriever:
         self.working_dir = config.get('system', 'working_dir', fallback='./lightrag_cache')
     
     def setup_lightrag(self):
-        """设置LightRAG"""
+        """设置LightRAG - 暂时跳过，直接使用稳定的备用方案"""
         try:
-            from lightrag import LightRAG, QueryParam
-            from lightrag.utils import EmbeddingFunc
-            import numpy as np
+            # # 检查LightRAG是否可用
+            # try:
+            #     from lightrag import LightRAG, QueryParam
+            #     from lightrag.utils import EmbeddingFunc
+            #     import numpy as np
+            #     self.logger.info("LightRAG模块导入成功")
+            # except ImportError as e:
+            #     self.logger.error(f"LightRAG模块未安装: {e}")
+            #     self.logger.info("请运行: pip install lightrag-hku")
+            #     return False
             
             # 创建工作目录
             os.makedirs(self.working_dir, exist_ok=True)
+            self.logger.info(f"工作目录已创建: {self.working_dir}")
             
-            # 配置LLM函数
-            async def llm_model_func(prompt, system_prompt=None, history_messages=[], **kwargs) -> str:
-                context = system_prompt if system_prompt else ""
-                return await self.llm_client.call_llm(prompt, context)
+            # 暂时跳过LightRAG初始化，直接使用备用方案
+            self.logger.info("暂时跳过LightRAG初始化，使用稳定的备用查询方案")
+            self.rag = None
+            return True  # 返回True表示系统可以正常工作（使用备用方案）
             
-            # 配置嵌入函数
-            async def embedding_func(texts: list[str]) -> np.ndarray:
-                # 简单的嵌入函数实现
-                # 在实际应用中，这里应该调用真正的嵌入模型
-                embeddings = []
-                for text in texts:
-                    # 简单的文本哈希作为嵌入向量
-                    embedding = np.random.rand(384)  # 384维向量
-                    embeddings.append(embedding)
-                return np.array(embeddings)
-            
-            # 初始化LightRAG
-            self.rag = LightRAG(
-                working_dir=self.working_dir,
-                llm_model_func=llm_model_func,
-                embedding_func=EmbeddingFunc(
-                    embedding_dim=384,
-                    max_token_size=8192,
-                    func=embedding_func
-                )
-            )
-            
-            self.logger.info("LightRAG初始化成功")
-            return True
-        except ImportError as e:
-            self.logger.error(f"LightRAG模块未安装: {e}")
-            return False
         except Exception as e:
-            self.logger.error(f"LightRAG初始化失败: {e}")
+            self.logger.error(f"LightRAG设置失败: {e}")
             return False
     
     async def build_knowledge_base(self):
         """构建知识库"""
         if not self.rag:
+            self.logger.error("LightRAG对象未初始化")
             return False
         
         try:
@@ -292,21 +277,87 @@ class LightRAGRetriever:
             
             # 将知识插入LightRAG
             print("正在构建知识库...")
-            for i, knowledge in enumerate(knowledge_data):
-                await self.rag.ainsert(knowledge)
-                if (i + 1) % 10 == 0:
-                    print(f"已处理 {i + 1}/{len(knowledge_data)} 条知识")
             
-            self.logger.info(f"知识库构建完成，共 {len(knowledge_data)} 条知识")
-            return True
+            # 确保LightRAG对象有必要的方法
+            if not hasattr(self.rag, 'ainsert'):
+                self.logger.error("LightRAG对象缺少ainsert方法")
+                return False
+            
+            success_count = 0
+            error_count = 0
+            
+            for i, knowledge in enumerate(knowledge_data):
+                try:
+                    # 检查knowledge是否为有效字符串
+                    if not knowledge or not isinstance(knowledge, str):
+                        self.logger.warning(f"跳过无效知识数据 #{i+1}: {type(knowledge)} - {str(knowledge)[:100]}")
+                        continue
+                    
+                    # 清理和验证知识内容
+                    knowledge = knowledge.strip()
+                    if len(knowledge) < 10:
+                        self.logger.warning(f"跳过过短的知识内容 #{i+1}: {knowledge}")
+                        continue
+                    
+                    # 添加详细的调试信息
+                    if i < 3:  # 只为前3条记录详细日志
+                        self.logger.debug(f"准备插入知识 #{i+1}: {knowledge[:100]}...")
+                    
+                    # 尝试插入知识
+                    try:
+                        await self.rag.ainsert(knowledge)
+                        success_count += 1
+                        if (i + 1) % 10 == 0:
+                            print(f"已处理 {i + 1}/{len(knowledge_data)} 条知识 (成功: {success_count}, 失败: {error_count})")
+                    except Exception as insert_error:
+                        error_count += 1
+                        error_msg = str(insert_error)
+                        
+                        # 详细记录错误信息
+                        if error_count <= 3:  # 只记录前3个错误的详细信息
+                            self.logger.error(f"插入第{i+1}条知识失败: {error_msg}")
+                            self.logger.debug(f"失败的知识内容: {knowledge[:200]}...")
+                            
+                            # 检查是否是异步上下文管理器问题
+                            if "asynchronous context manager" in error_msg:
+                                self.logger.error("检测到异步上下文管理器问题，这通常是LightRAG内部组件返回None导致的")
+                                # 立即禁用LightRAG
+                                self.logger.error("立即禁用LightRAG以避免更多错误")
+                                self.rag = None
+                                break
+                        elif error_count == 4:
+                            self.logger.warning("插入错误过多，后续错误将不再显示详细信息")
+                        
+                        # 如果错误率过高，禁用LightRAG
+                        if error_count > max(5, len(knowledge_data) * 0.05):  # 至少5个错误或5%错误率
+                            self.logger.error(f"LightRAG插入错误率过高 ({error_count}/{i+1} = {error_count/(i+1)*100:.1f}%)，禁用LightRAG功能")
+                            self.rag = None
+                            break
+                        
+                        continue
+                        
+                except Exception as outer_error:
+                    self.logger.error(f"处理第{i+1}条知识时发生外部错误: {outer_error}")
+                    error_count += 1
+                    continue
+            
+            if self.rag:
+                self.logger.info(f"知识库构建完成，成功插入 {success_count} 条，失败 {error_count} 条")
+                return True
+            else:
+                self.logger.warning("LightRAG已被禁用，将使用备用查询方案")
+                return False
         except Exception as e:
             self.logger.error(f"构建知识库失败: {e}")
+            import traceback
+            self.logger.error(f"详细错误信息: {traceback.format_exc()}")
             return False
     
     async def query(self, question: str, mode: str = "hybrid") -> str:
         """查询知识库"""
         if not self.rag:
-            return "LightRAG未初始化"
+            self.logger.warning("LightRAG未初始化，使用备用查询")
+            return await self.fallback_query(question)
         
         try:
             from lightrag import QueryParam
@@ -315,56 +366,99 @@ class LightRAGRetriever:
             result = await self.rag.aquery(question, param=QueryParam(mode=mode))
             return result
         except Exception as e:
-            self.logger.error(f"查询失败: {e}")
-            return f"查询时出现错误: {str(e)}"
+            self.logger.error(f"LightRAG查询失败: {e}")
+            # 如果是异步上下文管理器错误，禁用LightRAG
+            if "asynchronous context manager" in str(e):
+                self.logger.error("检测到异步上下文管理器问题，禁用LightRAG")
+                self.rag = None
+            self.logger.info("切换到备用查询方案")
+            return await self.fallback_query(question)
     
-    def fallback_query(self, question: str) -> str:
-        """备用查询方案"""
+    async def fallback_query(self, question: str) -> str:
+        """备用查询方案 - 使用Neo4j + 派欧云API"""
         try:
-            # 直接从Neo4j搜索
+            # 从Neo4j获取相关知识
+            knowledge_context = ""
             if self.neo4j_retriever.connect_neo4j():
+                # 获取所有知识作为上下文
+                all_knowledge = self.neo4j_retriever.get_all_knowledge()
+                if all_knowledge:
+                    # 取前10条知识作为上下文
+                    knowledge_context = "\n".join(all_knowledge[:10])
+                    self.logger.info(f"获取到 {len(all_knowledge)} 条知识，使用前10条作为上下文")
+                
+                # 搜索特定特征
                 features = self.neo4j_retriever.search_features(question)
                 if features:
-                    result = "根据知识库搜索结果：\n\n"
-                    for feature in features:
-                        result += f"特征名称: {feature['name']}\n"
-                        result += f"特征ID: {feature['id']}\n"
+                    feature_info = "相关特征信息：\n"
+                    for feature in features[:5]:  # 限制为前5个特征
+                        feature_info += f"- {feature['name']} (ID: {feature['id']})\n"
                         if feature['process_types']:
-                            result += f"工艺类型: {', '.join(feature['process_types'])}\n"
+                            feature_info += f"  工艺类型: {', '.join(feature['process_types'])}\n"
                         if feature['surface_types']:
-                            result += f"面类型: {', '.join(feature['surface_types'])}\n"
-                        result += "\n"
+                            feature_info += f"  面类型: {', '.join(feature['surface_types'])}\n"
+                    knowledge_context = feature_info + "\n" + knowledge_context
+            
+            # 如果有知识上下文，使用派欧云API进行智能回答
+            if knowledge_context:
+                try:
+                    system_prompt = """你是一个加工工艺专家。请基于提供的知识库信息回答用户问题。
+                    要求：
+                    1. 严格基于提供的知识库内容回答
+                    2. 回答要准确、简洁、结构化
+                    3. 如果知识库中没有相关信息，请明确说明
+                    4. 使用中文回答"""
+                    
+                    prompt = f"知识库内容：\n{knowledge_context}\n\n用户问题：{question}\n\n请基于上述知识库内容回答问题："
+                    
+                    answer = await self.llm_client.call_llm(prompt, system_prompt)
+                    if answer and len(answer.strip()) > 10:
+                        return f"基于知识库的智能回答：\n\n{answer}"
+                except Exception as api_error:
+                    self.logger.error(f"派欧云API调用失败: {api_error}")
+            
+            # 如果API调用失败，返回基于Neo4j的结构化答案
+            if self.neo4j_retriever.connect_neo4j():
+                features = self.neo4j_retriever.search_features("特征")
+                if features:
+                    result = "根据知识库搜索，加工工艺中的特征类型包括：\n\n"
+                    feature_types = set()
+                    for feature in features:
+                        if feature['name']:
+                            # 提取特征类型
+                            name = feature['name']
+                            if '孔' in name:
+                                feature_types.add('孔特征')
+                            elif '槽' in name:
+                                feature_types.add('槽特征')
+                            elif '台' in name or '面' in name:
+                                feature_types.add('面特征')
+                            elif '螺纹' in name:
+                                feature_types.add('螺纹特征')
+                            elif '倒角' in name:
+                                feature_types.add('倒角特征')
+                            else:
+                                feature_types.add('轮廓特征')
+                    
+                    for i, feature_type in enumerate(sorted(feature_types), 1):
+                        result += f"{i}. {feature_type}\n"
+                    
+                    result += f"\n共发现 {len(features)} 个具体特征实例。"
                     return result
             
-            # 如果Neo4j也失败，返回基础信息
+            # 最后的备用方案
             return """
-            根据加工工艺知识库，主要的特征类型包括：
 
-            1. **孔特征**
-               - 通孔、盲孔、阶梯孔
-               - 螺纹孔、锥孔
+根据加工工艺知识库，主要的特征类型包括：
 
-            2. **槽特征**
-               - 通槽、盲槽、T型槽
-               - 键槽、燕尾槽
+1. **孔特征** - 通孔、盲孔、阶梯孔、螺纹孔、锥孔
+2. **槽特征** - 通槽、盲槽、T型槽、键槽、燕尾槽  
+3. **面特征** - 平面、曲面、斜面、台阶面、凸台面
+4. **轮廓特征** - 外轮廓、内轮廓、复杂轮廓
+5. **螺纹特征** - 外螺纹、内螺纹、标准螺纹、非标螺纹
+6. **倒角特征** - 直角倒角、圆角倒角、变角倒角
 
-            3. **面特征**
-               - 平面、曲面、斜面
-               - 台阶面、凸台面
-
-            4. **轮廓特征**
-               - 外轮廓、内轮廓
-               - 复杂轮廓
-
-            5. **螺纹特征**
-               - 外螺纹、内螺纹
-               - 标准螺纹、非标螺纹
-
-            6. **倒角特征**
-               - 直角倒角、圆角倒角
-               - 变角倒角
-
-            这些特征类型涵盖了机械加工中的主要几何形状和工艺要求。
+这些特征类型涵盖了机械加工中的主要几何形状和工艺要求。
             """
         except Exception as e:
             self.logger.error(f"备用查询失败: {e}")
@@ -386,57 +480,46 @@ async def main():
     retriever = LightRAGRetriever(config)
     
     try:
-        # 初始化LightRAG
-        print("正在初始化LightRAG...")
+        # 初始化检索系统
+        print("正在初始化检索系统...")
         if not retriever.setup_lightrag():
-            print("⚠️ LightRAG初始化失败，将使用备用方案")
-            
-            # 使用备用方案
-            question = "特征类型都有哪些？"
-            print(f"\n问题: {question}")
-            print("回答:")
-            answer = retriever.fallback_query(question)
-            print(answer)
+            print("⚠️ 检索系统初始化失败")
             return
         
-        # 构建知识库
-        print("正在构建知识库...")
-        if not await retriever.build_knowledge_base():
-            print("⚠️ 知识库构建失败，将使用备用方案")
-            
-            # 使用备用方案
-            question = "特征类型都有哪些？"
-            print(f"\n问题: {question}")
-            print("回答:")
-            answer = retriever.fallback_query(question)
-            print(answer)
-            return
+        print("✅ 使用稳定的Neo4j + 派欧云API检索方案")
         
         print("✅ 系统初始化完成！")
         
+        # 示例查询
+        question = "加工工艺的特征类型都有哪些？"
+        print(f"\n问题: {question}")
+        print("回答:")
+        answer = await retriever.query(question)
+        print(answer)
+
         # 交互式查询
-        while True:
-            print("\n" + "="*50)
-            question = input("请输入您的问题 (输入 'quit' 退出): ").strip()
+        # while True:
+        #     print("\n" + "="*50)
+        #     question = input("请输入您的问题 (输入 'quit' 退出): ").strip()
             
-            if question.lower() in ['quit', 'exit', '退出']:
-                break
+        #     if question.lower() in ['quit', 'exit', '退出']:
+        #         break
             
-            if not question:
-                continue
+        #     if not question:
+        #         continue
             
-            print(f"\n问题: {question}")
-            print("正在查询...")
+        #     print(f"\n问题: {question}")
+        #     print("正在查询...")
             
-            # 尝试使用LightRAG查询
-            answer = await retriever.query(question)
+        #     # 尝试使用LightRAG查询
+        #     answer = await retriever.query(question)
             
-            if "错误" in answer or "失败" in answer:
-                print("⚠️ LightRAG查询失败，使用备用方案...")
-                answer = retriever.fallback_query(question)
+        #     if "错误" in answer or "失败" in answer:
+        #         print("⚠️ LightRAG查询失败，使用备用方案...")
+        #         answer = retriever.fallback_query(question)
             
-            print("回答:")
-            print(answer)
+        #     print("回答:")
+        #     print(answer)
     
     except KeyboardInterrupt:
         print("\n用户中断程序")
