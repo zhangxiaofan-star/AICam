@@ -10,7 +10,10 @@ import sys
 import asyncio
 import configparser
 import logging
+import re
+from typing import Dict, List, Any, Optional
 from neo4j import GraphDatabase
+from machining_advisor import MachiningAdvisor
 
 
 def load_config():
@@ -255,6 +258,7 @@ class IntelligentRetriever:
         self.logger = logging.getLogger(__name__)
         self.neo4j_retriever = Neo4jKnowledgeRetriever(config)
         self.llm_client = PaiyunLLMClient(config)
+        self.machining_advisor = MachiningAdvisor(config)
     
     def initialize(self):
         """初始化检索系统"""
@@ -270,61 +274,174 @@ class IntelligentRetriever:
             self.logger.error(f"检索系统初始化失败: {e}")
             return False
     
-    async def query(self, question: str) -> str:
-        """智能查询"""
+    async def query(self, query_text: str, mode: str = "hybrid") -> Dict[str, Any]:
+        """
+            智能查询方法
+
+            Args:
+                query_text: 查询文本
+                mode: 查询模式 ("hybrid", "local", "global", "naive")
+
+            Returns:
+                包含答案和相关信息的字典
+        """
         try:
-            self.logger.info(f"收到查询: {question}")
+            self.logger.info(f"开始查询: {query_text}")
             
             # 获取知识上下文
-            knowledge_context = ""
+            knowledge_context = await self._get_knowledge_context(query_text)
             
+            # 搜索特定特征
+            feature_info = self.neo4j_retriever.search_features(query_text)
+            
+            # 构建系统提示
+            system_prompt = f"""
+                    你是一个专业的机械加工知识助手。请基于以下知识库信息回答用户问题：
+
+                    知识库上下文：
+                    {knowledge_context}
+
+                    特征信息：
+                    {feature_info}
+
+                    请提供准确、专业的回答，并在可能的情况下给出具体的加工建议。
+                """
+            
+            # 使用派欧云API进行智能回答
+            response = await self.llm_client.call_llm(query_text, system_prompt)
+            
+            # 生成结构化答案
+            structured_answer = self._generate_structured_answer(
+                query_text, response, knowledge_context, feature_info
+            )
+            
+            self.logger.info("查询完成")
+            return structured_answer
+            
+        except Exception as e:
+            self.logger.error(f"查询过程中发生错误: {str(e)}")
+            return {
+                "answer": f"查询过程中发生错误: {str(e)}",
+                "confidence": 0.0,
+                "sources": [],
+                "error": str(e)
+            }
+
+    async def get_machining_recommendation(self, feature_name: str, feature_surface: str, 
+                                         process_stage: str, length: float, width: float, 
+                                         height: float) -> Dict[str, Any]:
+        """
+            获取加工推荐方案
+
+            Args:
+                feature_name: 特征名称（如：矩形通孔、圆柱凸台）
+                feature_surface: 特征面（如：平面、垂直面）
+                process_stage: 工序阶段
+                length: 长度
+                width: 宽度
+                height: 高度
+
+            Returns:
+                包含工艺模板和刀具推荐的字典
+        """
+        try:
+            self.logger.info(f"获取加工推荐: {feature_name}, {feature_surface}, {process_stage}")
+            
+            # 获取加工推荐
+            recommendation = self.machining_advisor.get_machining_recommendation(
+                feature_name, feature_surface, process_stage, length, width, height
+            )
+            
+            # 构建详细的系统提示
+            system_prompt = self.machining_advisor.get_decision_rules_prompt()
+            
+            # 构建查询文本
+            query_text = f"""
+                    请为以下工件特征提供详细的加工方案：
+
+                    特征信息：
+                    - 特征名称：{feature_name}
+                    - 特征面：{feature_surface}
+                    - 工序阶段：{process_stage}
+                    - 尺寸：长{length}mm × 宽{width}mm × 高{height}mm
+
+                    推荐结果：
+                    {recommendation}
+
+                    请详细说明选择这些工艺和刀具的原因，并提供具体的加工建议。
+                """
+            
+            # 使用LLM生成详细解释
+            response = await self.llm_client.call_llm(query_text, system_prompt)
+            
+            # 合并推荐结果和LLM解释
+            result = {
+                "recommendation": recommendation,
+                "detailed_explanation": response,
+                "feature_info": {
+                    "feature_name": feature_name,
+                    "feature_surface": feature_surface,
+                    "process_stage": process_stage,
+                    "dimensions": {
+                        "length": length,
+                        "width": width,
+                        "height": height
+                    }
+                }
+            }
+            
+            self.logger.info("加工推荐获取完成")
+            return result
+            
+        except Exception as e:
+            self.logger.error(f"获取加工推荐时发生错误: {str(e)}")
+            return {
+                "error": str(e),
+                "recommendation": None,
+                "detailed_explanation": f"获取加工推荐时发生错误: {str(e)}"
+            }
+    
+    async def _get_knowledge_context(self, query_text: str) -> str:
+        """获取知识上下文"""
+        try:
             # 获取所有知识作为上下文
             all_knowledge = self.neo4j_retriever.get_all_knowledge()
             if all_knowledge:
                 # 取前15条知识作为上下文
                 knowledge_context = "\n".join(all_knowledge[:15])
                 self.logger.info(f"获取到 {len(all_knowledge)} 条知识，使用前15条作为上下文")
-            
-            # 搜索特定特征
-            features = self.neo4j_retriever.search_features(question)
-            if features:
-                feature_info = "相关特征信息：\n"
-                for feature in features[:8]:  # 限制为前8个特征
-                    feature_info += f"- {feature['name']} (ID: {feature['id']})\n"
-                    if feature['process_types']:
-                        feature_info += f"  工艺类型: {', '.join(feature['process_types'])}\n"
-                    if feature['surface_types']:
-                        feature_info += f"  面类型: {', '.join(feature['surface_types'])}\n"
-                knowledge_context = feature_info + "\n" + knowledge_context
-            
-            # 使用派欧云API进行智能回答
-            if knowledge_context:
-                try:
-                    system_prompt = """你是一个加工工艺专家。请基于提供的知识库信息回答用户问题。
-                    要求：
-                    1. 严格基于提供的知识库内容回答
-                    2. 回答要准确、简洁、结构化
-                    3. 如果知识库中没有相关信息，请明确说明
-                    4. 使用中文回答
-                    5. 对于特征类型问题，请列出所有相关的特征类型"""
-                    
-                    prompt = f"知识库内容：\n{knowledge_context}\n\n用户问题：{question}\n\n请基于上述知识库内容回答问题："
-                    
-                    answer = await self.llm_client.call_llm(prompt, system_prompt)
-                    if answer and len(answer.strip()) > 10:
-                        return answer
-                except Exception as api_error:
-                    self.logger.error(f"派欧云API调用失败: {api_error}")
-            
-            # 如果API调用失败，返回基于Neo4j的结构化答案
-            return self._generate_structured_answer(question)
-            
+                return knowledge_context
+            return ""
         except Exception as e:
-            self.logger.error(f"查询失败: {e}")
-            return "抱歉，查询系统暂时不可用。"
-    
-    def _generate_structured_answer(self, question: str) -> str:
+            self.logger.error(f"获取知识上下文失败: {str(e)}")
+            return ""
+
+    def _generate_structured_answer(self, query_text: str, response: str = None, 
+                                   knowledge_context: str = "", feature_info: str = "") -> Dict[str, Any]:
         """生成结构化答案"""
+        try:
+            if response:
+                return {
+                    "answer": response,
+                    "confidence": 0.8,
+                    "sources": ["Neo4j知识图谱", "派欧云LLM"],
+                    "knowledge_context": knowledge_context,
+                    "feature_info": feature_info
+                }
+            else:
+                # 如果没有LLM响应，生成基于Neo4j的结构化答案
+                return self._generate_neo4j_answer(query_text)
+        except Exception as e:
+            self.logger.error(f"生成结构化答案失败: {str(e)}")
+            return {
+                "answer": f"生成答案时发生错误: {str(e)}",
+                "confidence": 0.0,
+                "sources": [],
+                "error": str(e)
+            }
+
+    def _generate_neo4j_answer(self, question: str) -> Dict[str, Any]:
+        """生成基于Neo4j的结构化答案"""
         try:
             # 特征类型相关问题
             if "特征类型" in question or "特征" in question:
@@ -347,7 +464,12 @@ class IntelligentRetriever:
                         result += f"   - 特征ID: {', '.join(map(str, ids))}\n\n"
                     
                     result += f"共发现 {len(feature_dict)} 种不同的特征类型，{len(features)} 个具体特征实例。"
-                    return result
+                    return {
+                        "answer": result,
+                        "confidence": 0.9,
+                        "sources": ["Neo4j知识图谱"],
+                        "features": features
+                    }
             
             # 工艺相关问题
             elif "工艺" in question:
@@ -383,14 +505,29 @@ class IntelligentRetriever:
                         result += "\n"
                     
                     result += f"基于 {len(all_knowledge)} 条知识记录分析得出。"
-                    return result
+                    return {
+                        "answer": result,
+                        "confidence": 0.8,
+                        "sources": ["Neo4j知识图谱"],
+                        "process_types": list(process_types),
+                        "process_stages": list(process_stages)
+                    }
             
             # 默认回答
-            return "根据知识库内容，我可以为您提供加工工艺特征类型、工艺流程等相关信息。请具体询问您想了解的内容。"
+            return {
+                "answer": "根据知识库内容，我可以为您提供加工工艺特征类型、工艺流程等相关信息。请具体询问您想了解的内容。",
+                "confidence": 0.5,
+                "sources": ["Neo4j知识图谱"]
+            }
             
         except Exception as e:
             self.logger.error(f"生成结构化答案失败: {e}")
-            return "抱歉，无法生成答案。"
+            return {
+                "answer": "抱歉，无法生成答案。",
+                "confidence": 0.0,
+                "sources": [],
+                "error": str(e)
+            }
 
 
 async def main():
@@ -407,7 +544,8 @@ async def main():
     print("=" * 50)
     
     retriever = IntelligentRetriever(config)
-    question = 'V形通槽的工艺类型是什么？'
+    # question = 'V形通槽的工艺类型是什么？'
+    question = '我现在有一个工件，他的特征类型是圆柱通孔，其中带孔的面中，孔直径是5mm，我想知道使用什么加工工艺和刀具进行加工？只需要给我一个工艺模板ID和刀具ID即可'
     try:
         # 初始化检索系统
         print("正在初始化检索系统...")
