@@ -162,32 +162,33 @@ class IntelligentMachiningSystem:
     async def _analyze_question_with_llm(self, question: str) -> Dict[str, Any]:
         """使用大模型分析问题"""
         analysis_prompt = f"""
-请分析以下加工问题，提取关键参数：
+            请分析以下加工问题，提取关键参数：
 
-问题：{question}
+            问题：{question}
 
-请按照以下JSON格式返回分析结果：
-{{
-    "feature_name": "特征名称（如：圆形通孔、矩形凹槽、圆柱凸台等）",
-    "surface_type": "表面类型（如：plane、垂直面、圆柱面等）",
-    "process_stage": "工序阶段（如：粗加工、半精加工、精加工、清根）",
-    "dimensions": {{
-        "diameter": "直径值（数字）",
-        "length": "长度值（数字）",
-        "width": "宽度值（数字）",
-        "height": "高度值（数字）",
-        "depth": "深度值（数字）"
-    }},
-    "analysis_confidence": "分析置信度（0-1）",
-    "missing_parameters": ["缺失的参数列表"]
-}}
+            请按照以下JSON格式返回分析结果：
+            {{
+                "feature_name": "特征名称（如：圆形通孔、矩形凹槽、圆柱凸台等）",
+                "surface_type": "表面类型（如：plane、垂直面、圆柱面等）",
+                "process_stage": "工序阶段（如：粗加工、半精加工、精加工、清根）",
+                "dimensions": {{
+                    "diameter": "直径值（数字）",
+                    "length": "长度值（数字）",
+                    "width": "宽度值（数字）",
+                    "height": "高度值（数字）",
+                    "depth": "深度值（数字）"
+                }},
+                "analysis_confidence": "分析置信度（0-1）",
+                "missing_parameters": ["缺失的参数列表"]
+            }}
 
-注意：
-1. 如果某个参数无法从问题中提取，请设为null
-2. 尺寸值只保留数字，不要单位
-3. 特征名称要使用标准术语
-4. 表面类型优先使用"plane"表示平面
-"""
+            注意：
+            1. 如果某个参数无法从问题中提取，请设为null
+            2. 尺寸值只保留数字，不要单位
+            3. 特征名称要使用标准术语
+            4. 表面类型优先使用"plane"表示平面
+            5. 工序阶段优先使用"粗加工"、"半精加工"、"精加工"、"清根"
+        """
         
         try:
             # 使用LightRAG的LLM接口
