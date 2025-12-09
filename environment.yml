@@ -1,0 +1,76 @@
+name: zxf-jog
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+  - conda-forge
+dependencies:
+  # 基础Python环境
+  - python=3.12.11
+  - pip
+  - setuptools
+  - wheel
+  
+  # 核心依赖包
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - networkx
+  - requests
+  - aiohttp
+  - tqdm
+  - pydantic
+  - configparser
+  - cryptography
+  
+  # 项目特定依赖通过pip安装
+  - pip:
+    # LightRAG和相关依赖
+    - lightrag-hku==1.3.4
+    
+    # Neo4j相关
+    - neo4j
+    
+    # 机器学习和数据处理
+    - gensim==4.3.3
+    - umap-learn==0.5.9.post2
+    - scikit-learn==1.7.1
+    - joblib==1.5.1
+    - numba==0.61.2
+    - llvmlite==0.44.0
+    
+    # 图形和可视化
+    - matplotlib==3.10.3
+    - pillow==11.3.0
+    - contourpy==1.3.3
+    - cycler==0.12.1
+    - fonttools==4.59.0
+    - kiwisolver==1.4.8
+    
+    # 数据科学工具
+    - patsy==1.0.1
+    - statsmodels==0.14.5
+    - threadpoolctl==3.6.0
+    
+    # 工具包
+    - anytree==2.13.0
+    - ascii-colors==0.11.4
+    - beartype==0.18.5
+    - pyparsing==3.2.3
+    - smart-open==7.3.0.post1
+    - tenacity==9.1.2
+    - wcwidth==0.2.13
+    - wrapt==1.17.2
+    
+    # 优化和求解器
+    - pot==0.9.5
+    - pynndescent==0.5.13
+    - graspologic==3.4.1
+    - graspologic-native==1.2.5
+    - hyppo==0.4.0
+    - autograd==1.8.0
+    
+    # 额外工具
+    - pipmaster==0.9.2
